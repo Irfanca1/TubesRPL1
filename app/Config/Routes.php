@@ -44,6 +44,12 @@ $routes->get('/login', 'Login::index');
 # Beranda
 $routes->get('/beranda', 'Beranda::index', ['filter' => 'auth']);
 
+# Menu
+$routes->get('/menu', 'Menu::index', ['filter' => 'auth']);
+$routes->get('/menu/(:any)', 'Menu::detail/$1', ['filter' => 'auth']);
+
+# Pemesanan
+$routes->get('/pemesanan/(:num)', 'Pemesanan::detail_pemesanan/$1', ['filter' => 'auth']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
