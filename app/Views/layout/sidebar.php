@@ -30,7 +30,9 @@
                   <li class="nav-item text-light">
                       <a href="/" class="nav-link <?= (strpos($title, 'Beranda') !== false) ? "active" : ""; ?>">
                           <i class="nav-icon fas fa-home text-light"></i>
-                          Beranda
+                          <p>
+                              Beranda
+                          </p>
                       </a>
                   </li>
 
