@@ -44,6 +44,10 @@ $routes->get('/login', 'Login::index');
 # Beranda
 $routes->get('/beranda', 'Beranda::index', ['filter' => 'auth']);
 
+# Meja
+$routes->get('/meja/create', 'Meja::create');
+$routes->get('/meja/(:num)', 'Meja::delete/$1');
+
 # Menu
 $routes->get('/menu', 'Menu::index', ['filter' => 'auth']);
 $routes->get('/menu/(:any)', 'Menu::detail/$1', ['filter' => 'auth']);

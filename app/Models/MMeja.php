@@ -8,7 +8,7 @@ class MMeja extends Model
 {
     protected $table            = 'meja';
     protected $primaryKey       = 'no_meja';
-    protected $allowedFields    = ['status_meja'];
+    protected $allowedFields    = ['meja', 'status_meja'];
 
     public function getMeja($no_meja = false)
     {
