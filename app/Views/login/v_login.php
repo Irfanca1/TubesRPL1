@@ -14,7 +14,7 @@
             <div class="card-body">
                 <?php if (session()->getFlashdata('Pesan')) : ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Perhatian!</strong> <?= session()->getFlashdata('pesan'); ?>
+                        <strong>Perhatian!</strong> <?= session()->getFlashdata('Pesan'); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
