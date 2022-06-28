@@ -8,8 +8,7 @@ use App\Models\MPembayaran;
 use App\Models\MPemesanan;
 use App\Models\MDetailPemesanan;
 
-class Beranda extends BaseController
-{
+class Beranda extends BaseController {
     protected
         $mejaModel,
         $pemesananModel,
@@ -48,3 +47,5 @@ class Beranda extends BaseController
         return view('beranda/v_beranda', $data);
     }
 }
+
+?>

@@ -50,6 +50,8 @@ $routes->get('/meja/(:num)', 'Meja::delete/$1');
 
 # Menu
 $routes->get('/menu', 'Menu::index', ['filter' => 'auth']);
+$routes->get('/menu/create', 'Menu::create', ['filter' => 'auth']);
+$routes->get('/menu/edit/(:segment)', 'Menu::edit/$1', ['filter' => 'auth']);
 $routes->get('/menu/(:any)', 'Menu::detail/$1', ['filter' => 'auth']);
 
 # Pemesanan
