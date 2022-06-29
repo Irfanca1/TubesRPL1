@@ -45,4 +45,80 @@ class MDetailPemesanan extends Model
 
         return $query;
     }
+
+    // Insert detail_pemesanan
+    public function saveDetailPemesanan($no_pemesanan, $no_pembayaran, $kode_menu, $kuantitas, $subtotal)
+    {
+        $data = [
+            'no_pemesanan' => $no_pemesanan,
+            'no_pembayaran' => $no_pembayaran,
+            'kode_menu' => $kode_menu,
+            'kuantitas' => $kuantitas,
+            'subtotal' => $subtotal,
+        ];
+
+        return $this->save($data);
+    }
+
+    // Get total_harga berdasarkan no_pemesanan
+    public function getTotalHarga($no_pemesanan)
+    {
+        $builder = $this->selectSum('subtotal');
+        $query = $builder->getWhere(['no_pemesanan' => $no_pemesanan])->getResultArray()[0]['subtotal'];
+
+        return $query;
+    }
+
+    // Get daftar menu berdasarkan no_pemesanan
+    public function getDaftarMenu($no_pemesanan)
+    {
+        $builder = $this->select(['kode_menu', 'kuantitas']);
+        $query = $builder->getWhere(['no_pemesanan' => $no_pemesanan])->getResultArray();
+
+        return $query;
+    }
+
+    // Get no_pembayaran berdasarkan no_pemesanan
+    public function getNoPembayaran($no_pemesanan)
+    {
+        return $this->select('no_pembayaran')->where(['no_pemesanan' => $no_pemesanan])->first()['no_pembayaran'];
+    }
+
+    // Get kuantias berdasarkan no_pemesanan dan $kode_menu
+    public function getKuantitas($no_pemesanan, $kode_menu)
+    {
+        return $this->select('kuantitas')
+            ->where([
+                'no_pemesanan' => $no_pemesanan,
+                'kode_menu' => $kode_menu,
+            ])
+            ->first()['kuantitas'];
+    }
+
+    // Delete detail_pemesanan
+    public function deleteDetailPemesanan($no_pemesanan, $kode_menu)
+    {
+        return $this->where([
+            'no_pemesanan' => $no_pemesanan,
+            'kode_menu' => $kode_menu,
+        ])
+            ->delete();
+    }
+
+    // Update detail_pemesanan
+    public function updateDetailPemesanan($no_pemesanan, $kodeMenuLama, $kodeMenuBaru, $kuantitasBaru, $subtotal)
+    {
+        $data = [
+            'kode_menu' => $kodeMenuBaru,
+            'kuantitas' => $kuantitasBaru,
+            'subtotal' => $subtotal,
+        ];
+
+        return $this->set($data)
+            ->where([
+                'no_pemesanan' => $no_pemesanan,
+                'kode_menu' => $kodeMenuLama,
+            ])
+            ->update();
+    }
 }

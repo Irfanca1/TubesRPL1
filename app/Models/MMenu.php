@@ -60,8 +60,8 @@ class MMenu extends Model
   }
 
   // Method untuk memperoleh jumlah menu yang tersedia (stok > 0)
-  public function getJumlahMenu() 
-  { 
+  public function getJumlahMenu()
+  {
     $builder = $this->selectCount('kode_menu');
     $query = $builder->getWhere(['stok >' => 0])->getResultArray()[0]['kode_menu'];
 
@@ -69,7 +69,7 @@ class MMenu extends Model
   }
 
   // Method untuk memperoleh menu terbaru
-  public function getMenuTerbaru() 
+  public function getMenuTerbaru()
   {
     $query = "SELECT kode_menu, nama, harga, gambar
       FROM menu

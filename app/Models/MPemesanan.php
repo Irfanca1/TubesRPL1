@@ -27,4 +27,59 @@ class MPemesanan extends Model
 
         return $query;
     }
+
+    // Insert pemesanan
+    public function savePemesanan($no_meja, $tanggal, $nama_pelanggan)
+    {
+        $data = [
+            'no_meja' => $no_meja,
+            'tanggal_pemesanan' => $tanggal,
+            'nama_pelanggan' => $nama_pelanggan,
+            'nrp' => session()->get('nrp'),
+        ];
+
+        return $this->save($data);
+    }
+
+    // Get no_meja
+    public function getNoMeja($no_pemesanan)
+    {
+        return $this->select('no_meja')->where(['no_pemesanan' => $no_pemesanan])->first()['no_meja'];
+    }
+
+    // Delete pemesanan
+    public function deletePemesanan($no_pemesanan)
+    {
+        return $this->delete($no_pemesanan);
+    }
+
+    // Update pemesanan via detail_pemesanan
+    public function updateDetailPemesanan($no_pemesanan, $status_pemesanan = "Belum Selesai")
+    {
+        $data = [  // update makanya pake no_pemesanan
+            'no_pemesanan' => $no_pemesanan,
+            'status_pemesanan' => $status_pemesanan,
+            'nrp' => session()->get('nrp'),
+        ];
+
+        return $this->save($data);
+    }
+
+    // Update pemesanan
+    public function updatePemesanan($no_pemesanan, $noMejaBaru, $tanggal, $nama_pelanggan)
+    {
+        $data = [  // update makanya pake no_pemesanan
+            'no_pemesanan' => $no_pemesanan,
+            'no_meja' => $noMejaBaru,
+            'tanggal_pemesanan' => $tanggal,
+            'nama_pelanggan' => $nama_pelanggan,
+            'nrp' => session()->get('nrp'),
+        ];
+
+        // if($tanggal != false) {
+        //   $data['tanggal_pemesanan'] = $tanggal;
+        // }
+
+        return $this->save($data);
+    }
 }

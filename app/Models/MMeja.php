@@ -22,7 +22,7 @@ class MMeja extends Model
     // Update status_meja
     public function updateStatusMeja($no_meja, $status)
     {
-        $query = "UPDATE meje SET
+        $query = "UPDATE meja SET
                   status_meja = '$status'
                   WHERE no_meja = $no_meja;";
         return $this->db->query($query);
@@ -42,5 +42,18 @@ class MMeja extends Model
         $query   = $builder->getWhere(['status_meja' => "Kosong"])->getResultArray();
 
         return $query;
+    }
+
+    // Insert pemesanan
+    public function savePemesanan($no_meja, $tanggal, $nama_pelanggan)
+    {
+        $data = [
+            'no_meja' => $no_meja,
+            'tanggal_pemesanan' => $tanggal,
+            'nama_pelanggan' => $nama_pelanggan,
+            'nrp' => session()->get('nrp'),
+        ];
+
+        return $this->save($data);
     }
 }
