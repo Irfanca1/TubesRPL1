@@ -469,4 +469,20 @@ class Pemesanan extends BaseController
 
         return redirect()->to(base_url("/pemesanan/$no_pemesanan"));
     }
+
+    // Ubah Status Pemesanan Koki
+    public function ubah_status($no_pemesanan, $status_pemesanan = "Belum Selesai")
+  {
+    if(! is_koki()) 
+    {
+      return redirect()->to(base_url(previous_url()));
+    }
+
+    $this->pemesananModel->updateDetailPemesanan($no_pemesanan, $status_pemesanan);
+
+    session()->setFlashdata('pesan', 'Status pemesanan berhasil diubah');
+
+		return redirect()->to(base_url("/pemesanan/$no_pemesanan"));
+    
+  }
 }
