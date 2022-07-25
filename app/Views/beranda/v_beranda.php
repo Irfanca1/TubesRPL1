@@ -93,7 +93,22 @@
                                 </div>
                             <?php endif; ?>
 
-
+                            <?php if (is_kasir()) : ?>
+                                <div class="col-lg-3 col-6">
+                                    <!-- small box -->
+                                    <div class="small-box bg-danger">
+                                        <div class="inner">
+                                            <h3><?= $pemasukanHarian; ?></h3>
+                                            <p>Pemasukan Hari Ini</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-cash"></i>
+                                        </div>
+                                        <a href="<?= base_url('/pelaporan') ?>" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                <!-- ./col -->
+                            <?php endif; ?>
                             </div>
                             <!-- /.row -->
                             <?php if (!is_kasir()) : ?>

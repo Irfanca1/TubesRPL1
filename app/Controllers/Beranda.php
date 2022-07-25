@@ -8,7 +8,8 @@ use App\Models\MPembayaran;
 use App\Models\MPemesanan;
 use App\Models\MDetailPemesanan;
 
-class Beranda extends BaseController {
+class Beranda extends BaseController
+{
     protected
         $mejaModel,
         $pemesananModel,
@@ -33,6 +34,8 @@ class Beranda extends BaseController {
         $menuTersedia = $this->menuModel->getJumlahMenu();
         $menuTerlaris = $this->detailPemesananModel->getMenuTerlaris();
         $menuTerbaru = $this->menuModel->getMenuTerbaru();
+        $pemasukanHarian = $this->pembayaranModel->getPemasukanHarian();
+        $pemasukanHarian = number_format($pemasukanHarian, 2, ',', '.');
 
         $data = [
             'title'             => 'Beranda',
@@ -40,6 +43,7 @@ class Beranda extends BaseController {
             'jumlahPemesanan'   => $jumlahPemesanan,
             'jumlahBelumBayar'  => $jumlahBelumBayar,
             'menuTersedia'      => $menuTersedia,
+            'pemasukanHarian' => $pemasukanHarian,
             'menuTerlaris'      => $menuTerlaris,
             'menuTerbaru'       => $menuTerbaru
         ];
