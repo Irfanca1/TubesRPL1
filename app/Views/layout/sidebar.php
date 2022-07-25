@@ -47,7 +47,7 @@
                       </li>
                   <?php endif ?>
 
-                  <?php if (is_pelayan()) : ?>
+                  <?php if (!is_koki()) : ?>
                       <li class="nav-item">
                           <a href="/meja" class="nav-link <?= (strpos($title, 'Meja') !== false) ? "active" : ""; ?>">
                               <i class="nav-icon fas fa-chair"></i>

@@ -47,5 +47,3 @@ class Beranda extends BaseController {
         return view('beranda/v_beranda', $data);
     }
 }
-
-?>

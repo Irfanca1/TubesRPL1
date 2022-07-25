@@ -45,7 +45,7 @@ class Meja extends BaseController
             'status_meja' => 'Kosong'
         ]);
 
-        session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan');
+        session()->setFlashdata('pesan', 'Meja Berhasil Ditambahkan');
 
         return redirect()->to('/meja');
     }
@@ -70,7 +70,7 @@ class Meja extends BaseController
         $meja = $this->mejaModel->find($no_meja);
 
         $this->mejaModel->delete($no_meja);
-        session()->setFlashdata('pesan', 'Data Berhasil dihapus');
+        session()->setFlashdata('pesan', 'Meja Berhasil dihapus');
         return redirect()->to('/meja');
     }
 }
