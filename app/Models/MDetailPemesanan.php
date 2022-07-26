@@ -141,13 +141,13 @@ class MDetailPemesanan extends Model
         $today = date("Y-m-d");
 
         $query = "SELECT a.kode_menu, a.nama, a.harga, SUM(ab.kuantitas) AS 'jumlah_terjual', ab.subtotal
-    FROM menu a
-    INNER JOIN detail_pemesanan ab USING(kode_menu)
-    INNER JOIN pembayaran b USING(no_pembayaran)
-    WHERE b.tanggal_pembayaran = '" . $today . "'
-    GROUP BY a.kode_menu	
-    ORDER BY SUM(ab.kuantitas) DESC;    
-    ";
+                    FROM menu a
+                    INNER JOIN detail_pemesanan ab USING(kode_menu)
+                    INNER JOIN pembayaran b USING(no_pembayaran)
+                    WHERE b.tanggal_pembayaran = '" . $today . "'
+                    GROUP BY a.kode_menu	
+                    ORDER BY SUM(ab.kuantitas) DESC;    
+                  ";
 
         $builder = $this->db->query($query);
         if (array_key_exists(0, $builder->getResultArray())) {

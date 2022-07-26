@@ -28,14 +28,16 @@ class Beranda extends BaseController
 
     public function index()
     {
-        $mejaKosong      = $this->mejaModel->getStatusMeja('Kosong');
-        $jumlahPemesanan = $this->pemesananModel->getJumlahPemesanan('Belum Selesai');
-        $jumlahBelumBayar =  $this->pembayaranModel->getJumlahPembayaran('Belum Bayar');
-        $menuTersedia = $this->menuModel->getJumlahMenu();
-        $menuTerlaris = $this->detailPemesananModel->getMenuTerlaris();
-        $menuTerbaru = $this->menuModel->getMenuTerbaru();
-        $pemasukanHarian = $this->pembayaranModel->getPemasukanHarian();
-        $pemasukanHarian = number_format($pemasukanHarian, 2, ',', '.');
+        $mejaKosong         = $this->mejaModel->getStatusMeja('Kosong');
+        $jumlahPemesanan    = $this->pemesananModel->getJumlahPemesanan('Belum Selesai');
+        $jumlahBelumBayar   =  $this->pembayaranModel->getJumlahPembayaran('Belum Bayar');
+        $menuTersedia       = $this->menuModel->getJumlahMenu();
+        $menuTerlaris       = $this->detailPemesananModel->getMenuTerlaris();
+        $menuTerbaru        = $this->menuModel->getMenuTerbaru();
+        $pemasukanHarian    = $this->pembayaranModel->getPemasukanHarian();
+        $pemasukanHarian    = number_format((float)$pemasukanHarian, 2, ',', '.');
+        // $pemasukanHarian    = floatval($pemasukanHarian);
+        // $pemasukanHarian    = number_format((float)$pemasukanHarian, 2, ',', '.');
 
         $data = [
             'title'             => 'Beranda',
@@ -43,7 +45,7 @@ class Beranda extends BaseController
             'jumlahPemesanan'   => $jumlahPemesanan,
             'jumlahBelumBayar'  => $jumlahBelumBayar,
             'menuTersedia'      => $menuTersedia,
-            'pemasukanHarian' => $pemasukanHarian,
+            'pemasukanHarian'   => $pemasukanHarian,
             'menuTerlaris'      => $menuTerlaris,
             'menuTerbaru'       => $menuTerbaru
         ];

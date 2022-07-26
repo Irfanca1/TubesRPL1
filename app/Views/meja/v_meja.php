@@ -50,7 +50,7 @@
                                                 <td class="text-center"><span class="badge bg-<?= ($mj['status_meja'] == 'Kosong') ? 'success' : 'danger'; ?>"><?= $mj['status_meja']; ?></span></td>
                                                 <?php if (is_pelayan()) : ?>
                                                     <td>
-                                                        <a href="<?= site_url('meja/delete/' . $mj['no_meja']); ?>" class=" btn btn-danger" onclick="confirm('Apakah Anda Yakin Ingin Menghapus?')"><i class="fas fa-trash"></i></a>
+                                                        <a href="<?= site_url('meja/delete/' . $mj['no_meja']); ?>" class=" btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 <?php endif; ?>
                                             </tr>

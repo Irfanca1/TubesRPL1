@@ -85,42 +85,6 @@ class Pemesanan extends BaseController
             return redirect()->to(base_url(previous_url()));
         }
 
-        // if (!$this->validate([
-        //     'tanggal' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => '{field} harus diisi!'
-        //         ],
-        //     ],
-        //     'namaPelanggan' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => '{field} harus diisi!'
-        //         ],
-        //     ],
-        //     'noMeja' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => '{field} harus diisi!'
-        //         ],
-        //     ],
-        //     'namaMenu' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => '{field} harus diisi!'
-        //         ],
-        //     ],
-        //     'kuantitas' => [
-        //         'rules' => 'required|greater_than[0]',
-        //         'errors' => [
-        //             'required' => '{field} harus diisi!',
-        //             'greater_than' => 'Jumlah kuantitas tidak boleh kurang dari 1!'
-        //         ],
-        //     ],
-        // ])) {
-        //     return redirect()->to(base_url('/pemesanan/tambah_pemesanan'))->withInput();
-        // };
-
         // Inisialisasi Field
         $tanggal        = $this->request->getVar('tanggal');
         $nama_pelanggan = $this->request->getVar('namaPelanggan');
@@ -317,42 +281,6 @@ class Pemesanan extends BaseController
         if (!is_pelayan()) {
             return redirect()->to(base_url(previous_url()));
         }
-
-        // if (!$this->validate([
-        //     'tanggal' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => 'Tanggal penjualan harus diisi!'
-        //         ],
-        //     ],
-        //     'namaPelanggan' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => 'Nama pelanggan harus diisi!'
-        //         ],
-        //     ],
-        //     'noMeja' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => 'Nomor meja harus diisi!'
-        //         ],
-        //     ],
-        //     'namaMenu' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //             'required' => 'Menu harus diisi!'
-        //         ],
-        //     ],
-        //     'kuantitas' => [
-        //         'rules' => 'required|greater_than[0]',
-        //         'errors' => [
-        //             'required' => 'Kuantitas menu harus diisi!',
-        //             'greater_than' => 'Jumlah kuantitas tidak boleh kurang dari 1!'
-        //         ],
-        //     ],
-        // ])) {
-        //     return redirect()->to(base_url("/pemesanan/ubah_pemesanan/$no_pemesanan"))->withInput();
-        // };
 
         // Inisialisasi field
         $no_pembayaran = $this->detailPemesananModel->getNoPembayaran($no_pemesanan);
