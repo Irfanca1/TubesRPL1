@@ -86,7 +86,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer text-center">
-                <a href="<?= base_url('/menu') . '/' . $menu['slug']; ?>" class="btn btn-secondary mr-2">Kembali</a>
+                <a href="<?= base_url('/menu') . '/' . $menu['slug']; ?>" class="btn btn-info mr-2">Kembali</a>
                   <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
                 <!-- /.card-footer -->

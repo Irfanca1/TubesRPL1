@@ -22,7 +22,7 @@
                 <?php endif; ?>
 
                 <form action="/login/auth" method="POST">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-4">
                         <input type="username" class="form-control" placeholder="Nama pengguna" name="username" required="required">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-4">
                         <input type="password" class="form-control" placeholder="Kata sandi" name="password" required="required">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -38,20 +38,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    <p class="text-dark">Ingat saya</p>
-                                </label>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-                        </div>
-                        <!-- /.col -->
+                    <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                    
                     </div>
                 </form>
             </div>

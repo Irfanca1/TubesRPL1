@@ -12,11 +12,11 @@
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div class="image">
                   <?php if (is_koki()) : ?>
-                      <img src="/assets/img/resto/koki.png" class="img-circle elevation-2" alt="Foto Koki">
+                      <img src="/assets/img/resto/chef.png" class="img-circle elevation-2" alt="Foto Koki">
                   <?php elseif (is_pelayan()) : ?>
                       <img src="/assets/img/resto/pelayan.png" class="img-circle elevation-2" alt="Foto Pelayan">
                   <?php elseif (is_kasir()) : ?>
-                      <img src="/assets/img/resto/kasir.png" class="img-circle elevation-2" alt="Foto Kasir">
+                      <img src="/assets/img/resto/cashier.png" class="img-circle elevation-2" alt="Foto Kasir">
                   <?php endif; ?>
               </div>
               <div class="info">

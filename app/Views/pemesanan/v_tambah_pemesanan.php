@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-center">
-                                    <a href="<?= base_url('/pemesanan'); ?>" class="btn btn-secondary mr-2">Kembali</a>
+                                    <a href="<?= base_url('/pemesanan'); ?>" class="btn btn-info mr-2">Kembali</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>

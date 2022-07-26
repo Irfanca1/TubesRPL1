@@ -37,7 +37,7 @@
                                     <p class="card-text">
                                         <medium><b>Deskripsi : </b><?= $menu['deskripsi']; ?></medium>
                                     </p>
-                                    <a href="<?= base_url('/menu'); ?>" class="btn btn-secondary mr-2">Kembali</a>
+                                    <a href="<?= base_url('/menu'); ?>" class="btn btn-primary mr-2">Kembali</a>
                                     <?php if (is_koki()) : ?>
                                         <a href="/menu/edit/<?= $menu['slug']; ?>" class="btn btn-warning">Ubah</a>
                                         <!-- <form action="/menu/<?php // echo $menu['kode_menu']; 
